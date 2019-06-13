@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`about App matches snapshot 1`] = `
-<div
-  className="app"
->
-  App Component
-</div>
+<Fragment>
+  <Search
+    handleChange={[Function]}
+    handleSubmit={[Function]}
+    value=""
+  />
+</Fragment>
 `;
