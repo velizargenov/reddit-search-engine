@@ -11,7 +11,8 @@ class App extends Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      value: ''
+      value: '',
+      data: []
     }
   }
 
@@ -23,7 +24,18 @@ class App extends Component {
 
   handleSubmit (event) {
     event.preventDefault();
-    console.log('state: ', this.state.value);
+    const { value } = this.state;
+
+    if (value !== '') {
+      this.retrieveData(value)
+        .then(data => this.setState({ data }));
+    }
+  }
+
+  async retrieveData (searchValue) {
+    const response = await fetch(`https://www.reddit.com/r/${searchValue}.json`);
+    const data = await response.json();
+    return data && data.data && data.data.children;
   }
 
   render () {

@@ -30,5 +30,8 @@ configure({ adapter: new Adapter() });
 - Test if the onSubmit function is called when the user presses "Search"
 - Test if state changes when the user enters a search term in the search bar
 
+## Task 3
+- Retrieve search results from reddit based on search term using the fetch API
+
 ## Resources
 -
