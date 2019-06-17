@@ -27,7 +27,8 @@ configure({ adapter: new Adapter() });
 - Save user's input in state
 - Print user's input in console when search is clicked
 - Add a snapshot test & a test to check if the component renders correctly
-- Test the searching functionality
+- Test if the onSubmit function is called when the user presses "Search"
+- Test if state changes when the user enters a search term in the search bar
 
 ## Resources
 -
