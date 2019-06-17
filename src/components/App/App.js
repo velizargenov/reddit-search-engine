@@ -2,6 +2,7 @@ import React, { Component, Fragment  } from 'react';
 
 import './App.css';
 import Search from '../Search/Search';
+import PostsList from '../PostsList/PostsList';
 
 class App extends Component {
   constructor(props) {
@@ -35,6 +36,7 @@ class App extends Component {
   async retrieveData (searchValue) {
     const response = await fetch(`https://www.reddit.com/r/${searchValue}.json`);
     const data = await response.json();
+
     return data && data.data && data.data.children;
   }
 
@@ -46,6 +48,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
+        <PostsList />
       </Fragment>
     )
   }

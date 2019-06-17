@@ -7,5 +7,6 @@ exports[`about App matches snapshot 1`] = `
     handleSubmit={[Function]}
     value=""
   />
+  <PostsList />
 </Fragment>
 `;

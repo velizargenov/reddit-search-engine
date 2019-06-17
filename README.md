@@ -33,5 +33,7 @@ configure({ adapter: new Adapter() });
 ## Task 3
 - Retrieve search results from reddit based on search term using the fetch API
 
+##
+
 ## Resources
 -
