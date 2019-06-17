@@ -1,8 +1,20 @@
 import React, { Component, Fragment  } from 'react';
 
+import { css } from '@emotion/core';
+import { ClipLoader } from 'react-spinners';
+
 import './App.css';
 import Search from '../Search/Search';
 import PostsList from '../PostsList/PostsList';
+
+const override = css`
+  position: absolute;
+  top: 100px;
+  margin-left: 50%;
+  display: block;
+  margin: 0 auto;
+  left: 50%;
+`;
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +25,8 @@ class App extends Component {
 
     this.state = {
       value: '',
-      data: []
+      data: [],
+      loading: false
     }
   }
 
@@ -26,10 +39,14 @@ class App extends Component {
   handleSubmit (event) {
     event.preventDefault();
     const { value } = this.state;
+    this.setState({
+      data: [],
+      loading: true
+    })
 
     if (value !== '') {
       this.retrieveData(value)
-        .then(data => this.setState({ data }));
+        .then(data => this.setState({ data, loading: false }));
     }
   }
 
@@ -42,14 +59,21 @@ class App extends Component {
 
   render () {
     return (
-      <Fragment>
+      <div className="wrapper">
         <Search
           value={this.state.value}
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
         <PostsList posts={this.state.data} />
-      </Fragment>
+        <ClipLoader
+          css={override}
+          sizeUnit={"px"}
+          size={150}
+          color={'#123abc'}
+          loading={this.state.loading}
+        />
+      </div>
     )
   }
 }
