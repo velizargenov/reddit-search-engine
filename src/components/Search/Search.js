@@ -5,8 +5,10 @@ import './Search.css';
 
 const Search = ({ handleSubmit, handleChange, value }) => (
   <form className='search' onSubmit={handleSubmit}>
-    <input type="text" value={value} onChange={handleChange} />
-    <input type="submit" value="Search" />
+    <div>
+      <input type="text" placeholder="Search..." value={value} onChange={handleChange} />
+      <button type="submit"><i className="fa fa-search"></i></button>
+    </div>
   </form>
 )
 

@@ -1,0 +1,12 @@
+input {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+}
+button {
+  border: 0;
+  height: 36px;
+  max-height: 33px;
+  font-size: 22px;
+  cursor: pointer;
+}

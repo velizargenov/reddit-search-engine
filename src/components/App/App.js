@@ -48,7 +48,7 @@ class App extends Component {
           handleSubmit={this.handleSubmit}
           handleChange={this.handleChange}
         />
-        <PostsList />
+        <PostsList posts={this.state.data} />
       </Fragment>
     )
   }
